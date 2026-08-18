@@ -87,10 +87,10 @@ catalog-cart/
 ## Прогрес
 
 - [x] 0 — Інфраструктура + доменні типи
-- [ ] 0.5 — Дизайн-система, Layout, Router, `/styleguide`
+- [x] 0.5 — Дизайн-система, Layout, Router, `/styleguide`
   - [x] токени + шрифти в `index.css` / `main.tsx`
   - [x] `Layout` + `Router` (catalog / product / cart / 404)
-  - [ ] сторінка `/styleguide`
+  - [x] сторінка `/styleguide`
 - [ ] 1 — Каталог на `useState`: `AbortController` + discriminated union
 - [ ] 2 — Zustand: стор кошика
 - [ ] 3 — `persist` middleware (localStorage)
