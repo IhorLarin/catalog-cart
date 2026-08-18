@@ -33,7 +33,7 @@ cd catalog-cart
 pnpm install
 pnpm add react-router zustand
 pnpm add tailwindcss @tailwindcss/vite
-pnpm add @fontsource-variable/geist @fontsource-variable/geist-mono
+pnpm add @fontsource-variable/oswald @fontsource-variable/inter @fontsource-variable/geist-mono
 git init
 ```
 
