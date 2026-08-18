@@ -1,1 +1,53 @@
 @import "tailwindcss";
+
+@theme {
+    --font-display    : "Oswald Variable", ui-sans-serif, sans-serif;
+    --font-sans       : "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+    --font-mono       : "Geist Mono Variable", ui-monospace, monospace;
+
+    --color-coral-400 : #f78d77;
+    --color-coral-500 : #f2695d;
+    --color-coral-600 : #e0503f;
+    --color-coral-50  : #fdeeea;
+
+    --color-slate-0   : #ffffff;
+    --color-slate-50  : #f7f7f7;
+    --color-slate-100 : #f1f1f1;
+    --color-slate-200 : #e6e6e6;
+    --color-slate-300 : #cfcfcf;
+    --color-slate-400 : #9b9b9b;
+    --color-slate-600 : #6e6e73;
+    --color-slate-700 : #55555a;
+    --color-slate-900 : #38383c;
+
+    --color-badge     : #85858d;
+    --color-ok        : #4caf72;
+    --color-warn      : #d99a2b;
+    --color-danger    : #d0503f;
+
+    --radius-control  : 4px;
+    --tracking-caps   : 0.08em;
+}
+
+@theme inline {
+    --color-page           : var(--color-slate-50);
+    --color-surface        : var(--color-slate-0);
+    --color-surface-sunken : var(--color-slate-100);
+    --color-line           : var(--color-slate-200);
+    --color-line-strong    : var(--color-slate-300);
+
+    --color-text           : var(--color-slate-900);
+    --color-text-subtle    : var(--color-slate-700);
+    --color-text-muted     : var(--color-slate-400);
+
+    --color-brand          : var(--color-coral-500);
+    --color-brand-hover    : var(--color-coral-600);
+    --color-brand-light    : var(--color-coral-400);
+    --color-brand-tint     : var(--color-coral-50);
+}
+
+@layer base {
+    body {
+        @apply bg-page text-text font-sans;
+    }
+}
