@@ -4,6 +4,7 @@ import { Layout } from "./Layout";
 import { CatalogPage } from "../pages/CatalogPage";
 import { ProductPage } from "../pages/ProductPage";
 import { CartPage } from "../pages/CartPage";
+import { StyleguidePage } from "../pages/StyleguidePage"
 import { NotFoundPage } from "../pages/NotFoundPage";
 
 export function AppRouter(): ReactNode {
@@ -15,6 +16,7 @@ export function AppRouter(): ReactNode {
                     <Route path="catalog" element={<CatalogPage />} />
                     <Route path="product/:id" element={<ProductPage />} />
                     <Route path="cart" element={<CartPage />} />
+                    <Route path="styleguide" element={<StyleguidePage />} />
                     <Route path="*" element={<NotFoundPage />} />
                 </Route>
             </Routes>
