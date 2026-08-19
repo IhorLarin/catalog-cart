@@ -3,11 +3,12 @@ import { type ReactNode, useEffect, useState } from "react";
 import type { FetchState } from "../types/fetchState";
 import type { ProductsResponse } from "../types/product";
 import { fetchProducts } from "../api/products";
+import { ProductCard } from "../components/ProductCard.tsx";
 
 export function CatalogPage(): ReactNode {
     // Один стан замість трьох useState (data/loading/error).
     // Завдяки discriminated union суперечливі комбінації
-    // ("грузиться і водночас помилка") неможливо навіть записати
+    // ("вантажитися і водночас помилка") неможливо навіть записати
     const [productsState, setProductsState] = useState<FetchState<ProductsResponse>>({ status: "pending" });
 
     useEffect(() => {
@@ -58,8 +59,10 @@ export function CatalogPage(): ReactNode {
 
     // Тут немає ?. і ?? — data гарантовано існує завдяки звуженню типу
     return (
-        <div className="font-mono tabular-nums">
-            {productsState.data.products.length} of {productsState.data.total}
+        <div className="grid grid-cols-4 gap-6">
+            {productsState.data.products.map((product) => (
+                <ProductCard key={product.id} product={product} />
+            ))}
         </div>
     );
 }
