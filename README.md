@@ -71,11 +71,31 @@ catalog-cart/
 
 **Чому `lib/` окремо:** чисті функції без React тестуються без рендеру — найдешевші тести в проєкті.
 
+## Конвенції коду
+
+- **Кожна функція-компонент має явний тип повернення `ReactNode`.** Без цього TypeScript
+  виводить тип автоматично і не завжди ловить помилку на кшталт `return AppRouter` замість
+  `return <AppRouter />` — обидва варіанти синтаксично валідні для компілятора, різницю бачить
+  тільки React у рантаймі. Явний `: ReactNode` змушує TypeScript звірити повернене значення
+  з тим, що React реально вміє рендерити, і підсвітити помилку одразу в редакторі.
+
+  ```tsx
+  function CatalogPage(): ReactNode { ... }   // так
+  function CatalogPage() { ... }              // ні — тип виводиться неявно
+  ```
+
 ## Прогрес
 
-- [ ] 0 — Інфраструктура + доменні типи
-- [ ] 0.5 — Дизайн-система, Layout, Router, `/styleguide`
+- [x] 0 — Інфраструктура + доменні типи
+- [x] 0.5 — Дизайн-система, Layout, Router, `/styleguide`
+  - [x] токени + шрифти в `index.css` / `main.tsx`
+  - [x] `Layout` + `Router` (catalog / product / cart / 404)
+  - [x] сторінка `/styleguide`
 - [ ] 1 — Каталог на `useState`: `AbortController` + discriminated union
+  - [x] 1.1 `api/products.ts` — fetch-функція, перевірка `response.ok`
+  - [x] 1.2 тип стану через discriminated union
+  - [x] 1.3 `CatalogPage` — завантаження, `AbortController`, рендер станів
+  - [ ] 1.4 `ProductCard` — розмітка картки, бейджі знижки й наявності
 - [ ] 2 — Zustand: стор кошика
 - [ ] 3 — `persist` middleware (localStorage)
 - [ ] 4 — Стор фільтрів: пошук, категорія, сортування, ціна
