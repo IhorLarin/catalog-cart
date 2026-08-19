@@ -91,11 +91,11 @@ catalog-cart/
   - [x] токени + шрифти в `index.css` / `main.tsx`
   - [x] `Layout` + `Router` (catalog / product / cart / 404)
   - [x] сторінка `/styleguide`
-- [ ] 1 — Каталог на `useState`: `AbortController` + discriminated union
+- [x] 1 — Каталог на `useState`: `AbortController` + discriminated union
   - [x] 1.1 `api/products.ts` — fetch-функція, перевірка `response.ok`
   - [x] 1.2 тип стану через discriminated union
   - [x] 1.3 `CatalogPage` — завантаження, `AbortController`, рендер станів
-  - [ ] 1.4 `ProductCard` — розмітка картки, бейджі знижки й наявності
+  - [x] 1.4 `ProductCard` + сітка, утиліти ціни в `lib/`
 - [ ] 2 — Zustand: стор кошика
 - [ ] 3 — `persist` middleware (localStorage)
 - [ ] 4 — Стор фільтрів: пошук, категорія, сортування, ціна
