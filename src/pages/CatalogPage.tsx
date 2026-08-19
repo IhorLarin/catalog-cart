@@ -7,7 +7,7 @@ import { fetchProducts } from "../api/products";
 export function CatalogPage(): ReactNode {
     // Один стан замість трьох useState (data/loading/error).
     // Завдяки discriminated union суперечливі комбінації
-    // ("грузиться і водночас помилка") неможливо навіть записати
+    // ("вантажитися і водночас помилка") неможливо навіть записати
     const [productsState, setProductsState] = useState<FetchState<ProductsResponse>>({ status: "pending" });
 
     useEffect(() => {
